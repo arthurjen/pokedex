@@ -1,8 +1,8 @@
 <template>
   <div class="header">
     <h2>Header</h2>
-    <PokeFilter/>
-    <PokeSort/>
+    <PokeFilter :filtered="filtered"/>
+    <PokeSort :sorted="sorted"/>
 
   </div>
 </template>
@@ -13,10 +13,10 @@ import PokeSort from './PokeSort'
 
 export default {
   components: {
-    PokeFilter, 
+    PokeFilter,
     PokeSort
   },
-  props: ['filtered'] 
+  props: ['filtered', 'sorted'] 
 }
 
 

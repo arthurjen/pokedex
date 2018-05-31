@@ -1,7 +1,7 @@
 <template>
   <div class="tile">
     <h2>{{ pokemon.pokemon }}</h2>
-
+    <h3>Attack: {{ pokemon.attack }}</h3>
   </div>
 </template>
 
