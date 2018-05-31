@@ -1,0 +1,22 @@
+<template>
+  <div class="tile">
+    <h2>{{ pokemon.pokemon }}</h2>
+
+  </div>
+</template>
+
+<script>
+
+export default { 
+  props: ['pokemon']
+}
+
+
+
+
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+</style>

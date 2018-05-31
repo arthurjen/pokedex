@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+    <h1>Pokedex</h1>
+    <PokeHeader :filtered="filter"/>
+    <Results :pokeList="pokemonList"/>
+
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import PokeHeader from './components/PokeHeader';
+import Results from './components/Results';
+import pokemonList from '../pokemon.js';
 
 export default {
-  name: 'app',
+  data() {
+    return {
+      pokemonList: pokemonList,
+      filter: {
+        type: ''
+
+      }
+    }
+
+  },
   components: {
-    HelloWorld
+    PokeHeader,
+    Results
+
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
