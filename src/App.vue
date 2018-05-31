@@ -2,9 +2,11 @@
   <div id="app">
 
     <h1>Pokedex</h1>
-    <PokeHeader :filtered="filter"/>
-    <Results :pokeList="pokemonList"/>
-
+    <p>{{ filter.type }}</p>
+    <p>{{ sort.sortBy }}</p>
+    <p>{{ pokeList }}</p>
+    <PokeHeader :filtered="filter" :sorted="sort"/>
+    <Results :pokeList="sortedFilteredPokemon"/>
 
   </div>
 </template>
@@ -21,15 +23,30 @@ export default {
       pokemonList: pokemonList,
       filter: {
         type: ''
+      },
+      sort: {
+        sortBy: ''
+      },
+      pokeList: []
+    }
 
-      }
+  },
+  computed: {
+    filteredPokemon() {
+      return this.pokemonList
+        .filter(pokemon => pokemon.type_1 === this.filter.type)
+      },
+    sortedFilteredPokemon() {
+      if(!this.filteredPokemon) return [];
+      return this.filteredPokemon
+        .slice()
+        .sort((a,b) => a.attack - b.attack)
     }
 
   },
   components: {
     PokeHeader,
     Results
-
   }
 }
 </script>
