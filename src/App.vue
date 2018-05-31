@@ -6,7 +6,7 @@
     <p>{{ sort.sortBy }}</p>
     <p>{{ pokeList }}</p>
     <PokeHeader :filtered="filter" :sorted="sort"/>
-    <Results :pokeList="filterPokemon"/>
+    <Results :pokeList="sortedFilteredPokemon"/>
 
   </div>
 </template>
@@ -32,12 +32,17 @@ export default {
 
   },
   computed: {
-    filterPokemon() {
+    filteredPokemon() {
       return this.pokemonList
+        .filter(pokemon => pokemon.type_1 === this.filter.type)
+      },
+    sortedFilteredPokemon() {
+      if(!this.filteredPokemon) return [];
+      return this.filteredPokemon
         .slice()
-        .sort((a, b) => a.attack - b.attack)
-      
+        .sort((a,b) => a.attack - b.attack)
     }
+
   },
   components: {
     PokeHeader,
