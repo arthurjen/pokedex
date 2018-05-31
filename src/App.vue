@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Pokedex</h1>
-    <PokeHeader/>
+    <PokeHeader :filtered="filter"/>
     <Results :pokeList="pokemonList"/>
 
   </div>
@@ -15,7 +15,11 @@ import pokemonList from '../pokemon.js';
 export default {
   data() {
     return {
-      pokemonList: pokemonList
+      pokemonList: pokemonList,
+      filter: {
+        type: ''
+
+      }
     }
 
   },
