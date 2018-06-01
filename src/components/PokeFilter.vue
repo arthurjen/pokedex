@@ -19,7 +19,17 @@
     <button @click="filterByDark">dark</button>
     <button @click="filterBySteel">steel</button>
     <button @click="filterByFairy">fairy</button>
-    
+    <div>
+      <input type="checkbox" id="water" value="Water" v-model="filterBy">
+      <label for="water">Water</label>
+      <input type="checkbox" id="fire" value="Fire" v-model="filterBy">
+      <label for="fire">Fire</label>
+      <input type="checkbox" id="electric" value="Electric" v-model="filterBy">
+      <label for="electric">Electric</label>
+      <br>
+      <span>Selected Filters: {{ filterBy }}</span>
+      <p>{{ types }}</p>
+    </div>
   </div>
 </template>
 
@@ -29,10 +39,11 @@ import Element from './Element';
 export default {
   data() {
     return {
+      filterBy: [],
       elementList: ['water', 'normal', 'fire', 'fighting', 'flying', 'grass', 'poison', 'electric', 'ground', 'psychic', 'rock', 'ice', 'bug', 'dragon', 'ghost', 'dark', 'steel', 'fairy']
     }
   },
-  props: ['filtered'],
+  props: ['filtered', 'types'],
   components: {
     Element
   },

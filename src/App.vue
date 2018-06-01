@@ -1,14 +1,12 @@
 <template>
   <div id="app">
 
-    <PokeHeader :filtered="filter" :sorted="sort"/>
+    <PokeHeader :filtered="filter" :types="types" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
-
   </div>
 </template>
 
 <script>
-
 import PokeHeader from './components/PokeHeader';
 import Results from './components/Results';
 import pokemonList from '../pokemon.js';
@@ -18,7 +16,8 @@ export default {
     return {
       pokemonList: pokemonList,
       filter: {
-        type: ''
+        type: '',
+        pokemonTypes: []
       },
       sort: {
         sortBy: ''
@@ -27,6 +26,10 @@ export default {
   },
 
   computed: {
+    types() {
+      this.pokemonList.forEach((pokemon) => this.filter.pokemonTypes.push(pokemon.type_1));
+      return Array.from(new Set(this.filter.pokemonTypes));
+    },
 
     filteredPokemon() {
       if(!this.filter.type) return this.pokemonList;
