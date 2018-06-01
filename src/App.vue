@@ -17,7 +17,7 @@ export default {
       pokemonTypes: [],
       pokemonList: pokemonList,
       filter: {
-        type: ['grass', 'poison'],
+        type: [],
         hp: -1
       },
       sort: {
@@ -34,8 +34,8 @@ export default {
 
     filteredPokemon() {
         return this.pokemonList.filter(pokemon => {
-          return (this.filter.type[0] === 'all' || (pokemon.type_1 === this.filter.type[0] || pokemon.type_2 === this.filter.type[0]))
-            && (this.filter.type[1] === 'all' || !this.filter.type[1] || (pokemon.type_1 === this.filter.type[1] || pokemon.type_2 === this.filter.type[1]))
+          return (!this.filter.type[0] || (pokemon.type_1 === this.filter.type[0] || pokemon.type_2 === this.filter.type[0]))
+            && (!this.filter.type[1] || (pokemon.type_1 === this.filter.type[1] || pokemon.type_2 === this.filter.type[1]))
             && (this.filter.hp < 0 || pokemon.hp > this.filter.hp)
         })
 
