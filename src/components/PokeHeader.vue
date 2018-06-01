@@ -1,6 +1,5 @@
 <template>
   <div class="header">
-    <h2>Header</h2>
     <PokeFilter :filtered="filtered"/>
     <PokeSort :sorted="sorted"/>
 
