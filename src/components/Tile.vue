@@ -1,10 +1,7 @@
 <template>
   <div class="tile" :style="{ background: pokemon.color_1}">
-    <div>
       <img :src="pokemon.url_image">
       <p>{{ pokemon.pokemon }}</p>
-      <p>Attack: {{ pokemon.attack }}</p>
-    </div>
   </div>
 </template>
 
@@ -27,20 +24,28 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .tile {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 5px;
-  padding: 10px;
-  transition: all 1s ease;
-  border: 1px solid white;
+  padding: 5px;
   border-radius: 8px;
+  opacity: 0.8;
+  transition: all 1s ease;
 }
 
+p {
+  text-align: center;
+}
+
+.tile:hover {
+  opacity: 1;
+}
 
 img {
-  width: 100px;
+  max-width: 80px;
+  max-height: 80px;
 }
 </style>

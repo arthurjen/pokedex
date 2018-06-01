@@ -4,7 +4,7 @@
     <h1>Pokedex</h1>
     <PokeHeader :filtered="filter" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
-
+    <Viewer />
   </div>
 </template>
 
@@ -12,6 +12,7 @@
 
 import PokeHeader from './components/PokeHeader';
 import Results from './components/Results';
+import Viewer from './components/Viewer';
 import pokemonList from '../pokemon.js';
 
 export default {
@@ -57,7 +58,8 @@ export default {
   },
   components: {
     PokeHeader,
-    Results
+    Results,
+    Viewer
   }
 }
 </script>
@@ -65,8 +67,9 @@ export default {
 <style>
 #app {
   background: #fa0505;
-  height: 804px;
-  
+  background: white;
+  height: 803px;
+  font-family: 'Sunflower', sans-serif;
 }
 
 h1, h2, h3, p {
