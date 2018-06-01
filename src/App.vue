@@ -7,6 +7,7 @@
     <p>{{ pokeList }}</p>
     <PokeHeader :filtered="filter" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
+   
 
   </div>
 </template>
