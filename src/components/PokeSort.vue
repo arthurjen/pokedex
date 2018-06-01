@@ -1,13 +1,22 @@
 <template>
   <div class="sort">
     <h2>Sort</h2>
-    <input v-model="sorted.sortBy">
+    <button @click="sortByAttack">attack</button>
+    <button @click="sortByName">name</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['sorted']
+  props: ['sorted'],
+  methods: {
+    sortByAttack() {
+      this.sorted.sortBy='attack'
+    },
+     sortByName() {
+      this.sorted.sortBy='name'
+    }
+  }
 }
 </script>
 

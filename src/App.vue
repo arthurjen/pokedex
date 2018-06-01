@@ -38,9 +38,24 @@ export default {
       },
     sortedFilteredPokemon() {
       if(!this.filteredPokemon) return [];
-      return this.filteredPokemon
-        .slice()
-        .sort((a,b) => a.attack - b.attack)
+      if(this.sort.sortBy==='attack') {
+        return this.filteredPokemon
+          .slice()
+          .sort((a,b) => a.attack - b.attack)
+      }  
+      else {
+        return this.filteredPokemon
+          .slice()
+          .sort((a,b) => {
+            if (a.pokemon < b.pokemon) {
+              return -1;
+            }
+            if (a.pokemon > b.pokemon) {
+              return 1;
+            }
+          })
+
+      } 
     }
 
   },
