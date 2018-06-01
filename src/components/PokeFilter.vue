@@ -1,106 +1,33 @@
 <template>
   <div class="filter">
-    <h2>Filter</h2>
-    <button @click="filterByNormal">normal</button>
-    <button @click="filterByWater">water</button>
-    <button @click="filterByFire">fire</button>
-    <button @click="filterByFighting">fighting</button>
-    <button @click="filterByFlying">flying</button>
-    <button @click="filterByGrass">grass</button>
-    <button @click="filterByPoison">poison</button>
-    <button @click="filterByElectric">electric</button>
-    <button @click="filterByGround">ground</button>
-    <button @click="filterByPsychic">psychic</button>
-    <button @click="filterByRock">rock</button>
-    <button @click="filterByIce">ice</button>
-    <button @click="filterByBug">bug</button>
-    <button @click="filterByDragon">dragon</button>
-    <button @click="filterByGhost">ghost</button>
-    <button @click="filterByDark">dark</button>
-    <button @click="filterBySteel">steel</button>
-    <button @click="filterByFairy">fairy</button>
+    
     <div>
-      <input type="checkbox" id="water" value="Water" v-model="filterBy">
-      <label for="water">Water</label>
-      <input type="checkbox" id="fire" value="Fire" v-model="filterBy">
-      <label for="fire">Fire</label>
-      <input type="checkbox" id="electric" value="Electric" v-model="filterBy">
-      <label for="electric">Electric</label>
-      <br>
-      <span>Selected Filters: {{ filterBy }}</span>
-      <p>{{ types }}</p>
+      <input type="number" v-model.number="filtered.hp"> 
     </div>
+    <TypeButton 
+      v-for="n in types"
+      :key="n"
+      :types="n" 
+      @select="filterByType"/> 
   </div>
 </template>
 
 <script>
-import Element from './Element';
+import TypeButton from './TypeButton';
 
 export default {
   data() {
     return {
       filterBy: [],
-      elementList: ['water', 'normal', 'fire', 'fighting', 'flying', 'grass', 'poison', 'electric', 'ground', 'psychic', 'rock', 'ice', 'bug', 'dragon', 'ghost', 'dark', 'steel', 'fairy']
     }
   },
   props: ['filtered', 'types'],
   components: {
-    Element
+    TypeButton
   },
   methods: {
-    filterByWater() {
-      this.filtered.type = 'water';
-    },
-    filterByNormal() {
-      this.filtered.type = 'normal';
-    },
-    filterByFire() {
-      this.filtered.type = 'fire';
-    },
-    filterByFighting() {
-      this.filtered.type = 'fighting';
-    },
-    filterByFlying() {
-      this.filtered.type = 'flying';
-    },
-    filterByGrass() {
-      this.filtered.type = 'grass';
-    },
-    filterByPoison() {
-      this.filtered.type = 'poison'; 
-    },
-    filterByElectric() {
-      this.filtered.type = 'electric';
-    },
-    filterByGround() {
-      this.filtered.type = 'ground';
-    },
-    filterByPsychic() {
-      this.filtered.type = 'psychic';
-    },
-    filterByRock() {
-      this.filtered.type = 'rock';
-    },
-    filterByIce() {
-      this.filtered.type = 'ice';
-    },
-    filterByBug() {
-      this.filtered.type = 'bug';
-    },
-    filterByDragon() {
-      this.filtered.type = 'dragon';
-    },
-    filterByGhost() {
-      this.filtered.type = 'ghost';
-    },
-    filterByDark() {
-      this.filtered.type = 'dark';
-    },
-    filterBySteel() {
-      this.filtered.type = 'steel';
-    },
-    filterByFairy() {
-      this.filtered.type = 'fairy';
+    filterByType(types) {
+      this.filtered.type = types;     
     }
   }
 }

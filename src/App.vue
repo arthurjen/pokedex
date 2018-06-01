@@ -14,10 +14,11 @@ import pokemonList from '../pokemon.js';
 export default {
   data() {
     return {
+      pokemonTypes: [],
       pokemonList: pokemonList,
       filter: {
         type: '',
-        pokemonTypes: []
+        hp: -1
       },
       sort: {
         sortBy: ''
@@ -27,14 +28,20 @@ export default {
 
   computed: {
     types() {
-      this.pokemonList.forEach((pokemon) => this.filter.pokemonTypes.push(pokemon.type_1));
-      return Array.from(new Set(this.filter.pokemonTypes));
+      this.pokemonList.forEach((pokemon) => this.pokemonTypes.push(pokemon.type_1));
+      return Array.from(new Set(this.pokemonTypes));
     },
 
     filteredPokemon() {
-      if(!this.filter.type) return this.pokemonList;
-      return this.pokemonList
-        .filter(pokemon => pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type)
+      return this.pokemonList.filter(pokemon => {
+        return (this.filter.type === '' || (pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type))
+          && (this.filter.hp < 0 || pokemon.hp > this.filter.hp) 
+      }) 
+
+
+      //if(!this.filter.type) return this.pokemonList;
+      //return this.pokemonList
+        //.filter(pokemon => pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type)
       },
 
     sortedFilteredPokemon() {
