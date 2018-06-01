@@ -4,6 +4,8 @@
     <h1>Pokedex</h1>
     <PokeHeader :filtered="filter" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
+   
+
   </div>
 </template>
 
