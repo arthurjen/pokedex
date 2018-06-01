@@ -18,7 +18,7 @@ export default {
       pokemonList: pokemonList,
       filter: {
         type: [],
-        hp: -1
+        hp: ''
       },
       sort: {
         sortBy: ''
