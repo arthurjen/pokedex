@@ -42,12 +42,7 @@ export default {
       },
 
     sortedFilteredPokemon() {
-      if(this.sort.sortBy==='id') {
-        return this.filteredPokemon
-          .slice()
-          .sort((a,b) => a.id - b.id)
-      }
-      else {
+      if(this.sort.sortBy==='name') {
         return this.filteredPokemon
           .slice()
           .sort((a,b) => {
@@ -58,6 +53,11 @@ export default {
               return 1;
             }
           })
+      }
+      else {
+          return this.filteredPokemon
+            .slice()
+            .sort((a,b) => a.id - b.id)
       }
     }
   },
