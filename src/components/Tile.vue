@@ -1,5 +1,8 @@
 <template>
-  <div class="tile" :style="{ background: pokemon.color_1}">
+  <div class="tile"
+    :style="{ background: pokemon.color_1}"
+    @click="$emit('selected', pokemon)"
+    >
       <img :src="pokemon.url_image">
       <p>{{ pokemon.pokemon }}</p>
   </div>
