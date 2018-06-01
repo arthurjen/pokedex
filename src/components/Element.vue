@@ -5,7 +5,7 @@
 <script>
 
 export default {
-  props: ['element']
+  props: ['pokemonType']
 }
 </script>
 

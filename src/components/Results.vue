@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="content">
     <div class="results">
       <Tile 
         v-for="pokemon in pokeList"
@@ -7,9 +7,8 @@
         :pokemon="pokemon"
         v-on:selected="selected = pokemon"
         />
-        
-      <Viewer :selectedPokemon="selected"/>
     </div>
+    <Viewer :selectedPokemon="selected"/>
   </section>
 </template>
 
@@ -43,10 +42,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.content {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+}
+
 .results {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   transition: all 1s ease;
-
+  border: 1px solid black;
+  border-radius: 25px;
+  background: white;
+  margin: 30px;
+  overflow: scroll;
+  height: 600px;
 }
+
 </style>

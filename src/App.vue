@@ -1,16 +1,12 @@
 <template>
   <div id="app">
 
-    <h1>Pokedex</h1>
-    <PokeHeader :filtered="filter" :sorted="sort"/>
+    <PokeHeader :filtered="filter" :types="types" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
-   
-
   </div>
 </template>
 
 <script>
-
 import PokeHeader from './components/PokeHeader';
 import Results from './components/Results';
 import pokemonList from '../pokemon.js';
@@ -20,26 +16,33 @@ export default {
     return {
       pokemonList: pokemonList,
       filter: {
-        type: ''
+        type: '',
+        pokemonTypes: []
       },
       sort: {
         sortBy: ''
       }
     }
-
   },
+
   computed: {
+    types() {
+      this.pokemonList.forEach((pokemon) => this.filter.pokemonTypes.push(pokemon.type_1));
+      return Array.from(new Set(this.filter.pokemonTypes));
+    },
+
     filteredPokemon() {
+      if(!this.filter.type) return this.pokemonList;
       return this.pokemonList
-        .filter(pokemon => pokemon.type_1 === this.filter.type)
+        .filter(pokemon => pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type)
       },
+
     sortedFilteredPokemon() {
-      if(!this.filteredPokemon) return [];
-      if(this.sort.sortBy==='attack') {
+      if(this.sort.sortBy==='id') {
         return this.filteredPokemon
           .slice()
-          .sort((a,b) => a.attack - b.attack)
-      }  
+          .sort((a,b) => a.id - b.id)
+      }
       else {
         return this.filteredPokemon
           .slice()
@@ -51,10 +54,8 @@ export default {
               return 1;
             }
           })
-
-      } 
+      }
     }
-
   },
   components: {
     PokeHeader,
@@ -66,7 +67,6 @@ export default {
 <style>
 #app {
   background: #fa0505;
-  background: white;
   height: 803px;
   font-family: 'Sunflower', sans-serif;
 }
