@@ -1,13 +1,33 @@
 <template>
   <div class="filter">
     <h2>Filter</h2>
-    <input v-model="filtered.type">
+    <button @click="filterByNormal">normal</button>
+    <button @click="filterByType">water</button>
+    
   </div>
 </template>
 
 <script>
+import Element from './Element';
+
 export default {
-  props: ['filtered']
+  data() {
+    return {
+      elementList: ['water', 'fire', 'grass']
+    }
+  },
+  props: ['filtered'],
+  components: {
+    Element
+  },
+  methods: {
+    filterByWater() {
+      this.filtered.type = 'water';
+    },
+    filterByNormal() {
+      this.filtered.type = 'normal';
+    }
+  }
 }
 </script>
 
