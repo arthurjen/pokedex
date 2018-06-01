@@ -33,11 +33,12 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 5px;
+  padding: 10px;
+  transition: all 1s ease;
+  border: 1px solid white;
+  border-radius: 8px;
 }
 
-.colored-tile {
-
-}
 
 img {
   width: 100px;

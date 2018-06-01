@@ -31,5 +31,7 @@ export default {
 .results {
   display: flex;
   flex-wrap: wrap;
+  transition: all 1s ease;
+
 }
 </style>

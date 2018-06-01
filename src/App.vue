@@ -63,7 +63,13 @@ export default {
 </script>
 
 <style>
-h2, h3, p {
+#app {
+  background: #fa0505;
+  height: 804px;
+  
+}
+
+h1, h2, h3, p {
   margin: 0px;
 }
 
