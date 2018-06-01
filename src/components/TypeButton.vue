@@ -1,11 +1,12 @@
 <template>
-    <div>{{ element }}</div>
+    <button @click="$emit('select', types)">{{ types }}</button>
+
 </template>
 
 <script>
 
 export default {
-  props: ['pokemonType']
+  props: ['types']
 }
 </script>
 
