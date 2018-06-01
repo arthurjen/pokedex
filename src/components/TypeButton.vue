@@ -1,12 +1,18 @@
 <template>
-    <button @click="$emit('select', types)">{{ types }}</button>
-
+  <div>
+    <input type="checkbox"
+      :id="types"
+      :value="types"
+      v-model="filtered.type"
+      >
+    <label :for="types">{{ types }}</label>
+  </div>
 </template>
 
 <script>
 
 export default {
-  props: ['types']
+  props: ['types', 'filtered']
 }
 </script>
 

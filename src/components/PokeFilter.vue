@@ -4,10 +4,12 @@
     <div>
       <input type="number" v-model.number="filtered.hp"> 
     </div>
+    {{ filtered.type }}
     <TypeButton 
       v-for="n in types"
       :key="n"
-      :types="n" 
+      :types="n"
+      :filtered="filtered"
       @select="filterByType"/> 
   </div>
 </template>
