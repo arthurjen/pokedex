@@ -2,7 +2,7 @@
   <div class="filter">
     <h2>Filter</h2>
     <button @click="filterByNormal">normal</button>
-    <button @click="filterByType">water</button>
+    <button @click="filterByWater">water</button>
     
   </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
   <div class="results">
-    <h2>Results</h2>
     <Tile 
       v-for="pokemon in pokeList"
       :key="pokemon.id"
@@ -16,7 +15,7 @@ import Tile from './Tile'
 
 export default {
   components: {
-    Tile 
+    Tile
 
   },
 
@@ -29,5 +28,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.results {
+  display: flex;
+  flex-wrap: wrap;
+}
 </style>

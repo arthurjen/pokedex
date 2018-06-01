@@ -2,9 +2,6 @@
   <div id="app">
 
     <h1>Pokedex</h1>
-    <p>{{ filter.type }}</p>
-    <p>{{ sort.sortBy }}</p>
-    <p>{{ pokeList }}</p>
     <PokeHeader :filtered="filter" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
 
@@ -26,8 +23,7 @@ export default {
       },
       sort: {
         sortBy: ''
-      },
-      pokeList: []
+      }
     }
 
   },
@@ -67,5 +63,9 @@ export default {
 </script>
 
 <style>
+h2, h3, p {
+  margin: 0px;
+}
+
 
 </style>
