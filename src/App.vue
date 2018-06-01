@@ -17,7 +17,7 @@ export default {
       pokemonTypes: [],
       pokemonList: pokemonList,
       filter: {
-        type: '',
+        type: [],
         hp: -1
       },
       sort: {
@@ -33,24 +33,16 @@ export default {
     },
 
     filteredPokemon() {
-      return this.pokemonList.filter(pokemon => {
-        return (this.filter.type === '' || (pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type))
-          && (this.filter.hp < 0 || pokemon.hp > this.filter.hp) 
-      }) 
+        return this.pokemonList.filter(pokemon => {
+          return (!this.filter.type[0] || (pokemon.type_1 === this.filter.type[0] || pokemon.type_2 === this.filter.type[0]))
+            && (!this.filter.type[1] || (pokemon.type_1 === this.filter.type[1] || pokemon.type_2 === this.filter.type[1]))
+            && (this.filter.hp < 0 || pokemon.hp > this.filter.hp)
+        })
 
-
-      //if(!this.filter.type) return this.pokemonList;
-      //return this.pokemonList
-        //.filter(pokemon => pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type)
       },
 
     sortedFilteredPokemon() {
-      if(this.sort.sortBy==='id') {
-        return this.filteredPokemon
-          .slice()
-          .sort((a,b) => a.id - b.id)
-      }
-      else {
+      if(this.sort.sortBy==='name') {
         return this.filteredPokemon
           .slice()
           .sort((a,b) => {
@@ -61,6 +53,11 @@ export default {
               return 1;
             }
           })
+      }
+      else {
+          return this.filteredPokemon
+            .slice()
+            .sort((a,b) => a.id - b.id)
       }
     }
   },
