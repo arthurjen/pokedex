@@ -27,11 +27,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .tile {
-  width: 100px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 5px;
   padding: 5px;
   border-radius: 8px;
@@ -41,6 +42,8 @@ export default {
 
 p {
   text-align: center;
+  font-size: 1em;
+  margin-top: 5px;
 }
 
 .tile:hover {

@@ -50,8 +50,14 @@ export default {
 .results {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   transition: all 1s ease;
   border: 1px solid black;
+  border-radius: 25px;
   background: white;
+  margin: 30px;
+  overflow: scroll;
+  height: 600px;
 }
+
 </style>
