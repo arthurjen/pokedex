@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <PokeFilter :filtered="filtered"/>
+    <PokeFilter :filtered="filtered" :types="types"/>
     <PokeSort :sorted="sorted"/>
 
   </div>
@@ -15,7 +15,7 @@ export default {
     PokeFilter,
     PokeSort
   },
-  props: ['filtered', 'sorted'],
+  props: ['filtered', 'types', 'sorted'],
   methods: {
     updateFiltered(type) {
       this.filtered.type = type;
@@ -28,5 +28,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.header {
+  display: flex;
+}
 </style>
