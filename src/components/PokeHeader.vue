@@ -16,7 +16,12 @@ export default {
     PokeFilter,
     PokeSort
   },
-  props: ['filtered', 'sorted'] 
+  props: ['filtered', 'sorted'],
+  methods: {
+    updateFiltered(type) {
+      this.filtered.type = type;
+    }
+  }
 }
 
 
