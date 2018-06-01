@@ -29,6 +29,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .header {
-  display: flex;
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  
+
 }
 </style>

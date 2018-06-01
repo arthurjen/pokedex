@@ -4,7 +4,6 @@
     <div>
       <input type="number" v-model.number="filtered.hp"> 
     </div>
-    {{ filtered.type }}
     <TypeButton 
       v-for="n in types"
       :key="n"
@@ -37,5 +36,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  
+}
 
 </style>
