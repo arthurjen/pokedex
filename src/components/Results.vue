@@ -1,12 +1,14 @@
 <template>
   <section class="content">
-    <div class="results">
-      <Tile 
-        v-for="pokemon in pokeList"
-        :key="pokemon.id"
-        :pokemon="pokemon"
-        v-on:selected="selected = pokemon"
-        />
+    <div class="results-container">
+      <div class="results">
+        <Tile 
+          v-for="pokemon in pokeList"
+          :key="pokemon.id"
+          :pokemon="pokemon"
+          v-on:selected="selected = pokemon"
+          />
+      </div>
     </div>
     <Viewer :selectedPokemon="selected"/>
   </section>
@@ -45,20 +47,27 @@ export default {
 .content {
   display: grid;
   grid-template: auto / 1fr 1fr;
+  
+}
+
+.results-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 25px;
+  background: white;
+  height: 600px;
+  margin: 30px;
 }
 
 .results {
   display: flex;
+  
   flex-wrap: wrap;
-  justify-content: center;
   transition: all 1s ease;
-  border: 1px solid black;
-  border-radius: 25px;
-  background: white;
-  margin: 30px;
   overflow: scroll;
-  height: 600px;
-  align-items: flex-start; 
+  align-content: flex-start; 
+  max-width: 95%;
 }
 
 </style>

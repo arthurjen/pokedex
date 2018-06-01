@@ -2,7 +2,7 @@
   <div class="filter">
     
     <div>
-      <input type="number" v-model.number="filtered.hp"> 
+      <input type="number" placeholder="Minimum HP" v-model.number="filtered.hp"> 
     </div>
     <TypeButton 
       v-for="n in types"

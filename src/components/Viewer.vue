@@ -16,7 +16,7 @@
       <p>SP. Def.: {{ selectedPokemon.special_defense }}</p>
     </div>
   </section>
-  <section class="viewer" v-else>
+  <section id="default-message" class="viewer" v-else>
     <h1>Select a Pokemon</h1>
     
   </section>
@@ -58,6 +58,10 @@ img {
   grid-area: name;
   text-align: center;
   margin-bottom: 15px;
+}
+
+#default-message {
+  text-align: center;
 }
 
 </style>
