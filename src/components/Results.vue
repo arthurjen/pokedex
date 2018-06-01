@@ -45,13 +45,13 @@ export default {
 .content {
   display: grid;
   grid-template: auto / 1fr 1fr;
-
 }
 
 .results {
   display: flex;
   flex-wrap: wrap;
   transition: all 1s ease;
-
+  border: 1px solid black;
+  background: white;
 }
 </style>

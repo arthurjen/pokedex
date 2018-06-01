@@ -1,10 +1,8 @@
 <template>
   <div id="app">
 
-    <h1>Pokedex</h1>
     <PokeHeader :filtered="filter" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
-   
 
   </div>
 </template>
@@ -26,20 +24,22 @@ export default {
         sortBy: ''
       }
     }
-
   },
+
   computed: {
+
     filteredPokemon() {
+      if(!this.filter.type) return this.pokemonList;
       return this.pokemonList
-        .filter(pokemon => pokemon.type_1 === this.filter.type)
+        .filter(pokemon => pokemon.type_1 === this.filter.type || pokemon.type_2 === this.filter.type)
       },
+
     sortedFilteredPokemon() {
-      if(!this.filteredPokemon) return [];
-      if(this.sort.sortBy==='attack') {
+      if(this.sort.sortBy==='id') {
         return this.filteredPokemon
           .slice()
-          .sort((a,b) => a.attack - b.attack)
-      }  
+          .sort((a,b) => a.id - b.id)
+      }
       else {
         return this.filteredPokemon
           .slice()
@@ -51,10 +51,8 @@ export default {
               return 1;
             }
           })
-
-      } 
+      }
     }
-
   },
   components: {
     PokeHeader,
@@ -66,7 +64,6 @@ export default {
 <style>
 #app {
   background: #fa0505;
-  background: white;
   height: 803px;
   font-family: 'Sunflower', sans-serif;
 }

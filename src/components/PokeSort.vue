@@ -1,8 +1,8 @@
 <template>
   <div class="sort">
     <h2>Sort</h2>
-    <button @click="sortByAttack">attack</button>
-    <button @click="sortByName">name</button>
+    <button @click="sortByID">ID</button>
+    <button @click="sortByName">Name</button>
   </div>
 </template>
 
@@ -10,11 +10,11 @@
 export default {
   props: ['sorted'],
   methods: {
-    sortByAttack() {
-      this.sorted.sortBy='attack'
+    sortByID() {
+      this.sorted.sortBy = 'id'
     },
      sortByName() {
-      this.sorted.sortBy='name'
+      this.sorted.sortBy = 'name'
     }
   }
 }
