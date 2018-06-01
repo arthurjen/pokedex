@@ -58,6 +58,7 @@ export default {
   margin: 30px;
   overflow: scroll;
   height: 600px;
+  align-items: flex-start; 
 }
 
 </style>

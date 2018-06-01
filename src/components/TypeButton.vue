@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="type-button">
     <input type="checkbox"
       :id="types"
       :value="types"
@@ -18,5 +18,26 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.type-button {
+  border: 1px solid black;
+  
+
+}
+input {
+  display: none;
+}
+
+input:checked ~ label {
+  background: darkblue;
+
+}
+
+label {
+  cursor: pointer;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: blue;
+  color: white;
+}
 
 </style>
