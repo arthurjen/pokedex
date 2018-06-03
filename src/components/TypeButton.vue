@@ -5,7 +5,7 @@
       :value="types"
       v-model="filtered.type"
       >
-    <label :for="types">{{ types }}</label>
+    <label :for="types">{{ types.replace(/^\w/, c => c.toUpperCase()) }}</label>
   </div>
 </template>
 
