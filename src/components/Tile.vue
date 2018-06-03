@@ -4,7 +4,7 @@
     @click="$emit('selected', pokemon)"
     >
       <img :src="pokemon.url_image">
-      <p>{{ pokemon.pokemon }}</p>
+      <p>{{ pokemon.pokemon.replace(/^\w/, c => c.toUpperCase()) }}</p>
   </div>
 </template>
 

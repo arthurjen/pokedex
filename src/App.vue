@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    {{ sort.sortBy }}
     <PokeHeader :filtered="filter" :types="types" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
   </div>
@@ -21,7 +21,7 @@ export default {
         hp: ''
       },
       sort: {
-        sortBy: ''
+        sortBy: 'id'
       }
     }
   },
@@ -42,23 +42,17 @@ export default {
       },
 
     sortedFilteredPokemon() {
-      if(this.sort.sortBy==='name') {
-        return this.filteredPokemon
-          .slice()
-          .sort((a,b) => {
-            if (a.pokemon < b.pokemon) {
-              return -1;
-            }
-            if (a.pokemon > b.pokemon) {
-              return 1;
-            }
-          })
-      }
-      else {
-          return this.filteredPokemon
-            .slice()
-            .sort((a,b) => a.id - b.id)
-      }
+      return this.filteredPokemon
+        .slice()
+        .sort((a, b) => {
+          if(a[this.sort.sortBy] < b[this.sort.sortBy]) {
+            return -1;
+          }
+          if(a[this.sort.sortBy] > b[this.sort.sortBy]) {
+            return 1;
+          }
+          return 0;
+        })
     }
   },
   components: {
