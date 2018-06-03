@@ -3,7 +3,7 @@
     <img :src="selectedPokemon.url_image">
     <h2 class="pokemon-name">{{ selectedPokemon.pokemon.toUpperCase() }}</h2>
     <div id="viewer-content">
-      <p>Type: {{ selectedPokemon.type_1 }} <span v-if="selectedPokemon.type_2 !== 'NA'">and {{ selectedPokemon.type_2 }}</span></p>
+      <p>Type: {{ selectedPokemon.type_1.replace(/^\w/, c => c.toUpperCase()) }} <span v-if="selectedPokemon.type_2 !== 'NA'">and {{ selectedPokemon.type_2.replace(/^\w/, c => c.toUpperCase()) }}</span></p>
       <p>Height: {{ selectedPokemon.height / 10 }} m</p>
       <p>Weight: {{ selectedPokemon.weight / 10 }} kg</p>
     </div>

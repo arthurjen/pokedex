@@ -1,22 +1,23 @@
 <template>
   <div class="sort">
     <h2>Sort</h2>
-    <button @click="sortByID">ID</button>
-    <button @click="sortByName">Name</button>
+    <input type="radio" id="id" value="id" v-model="sorted.sortBy">
+    <label for="id">ID</label>
+    
+    <input type="radio" id="name" value="pokemon" v-model="sorted.sortBy">
+    <label for="name">Name</label>
+    
+    <input type="radio" id="attack" value="attack" v-model="sorted.sortBy">
+    <label for="attack">Attack</label>
+
+    <input type="radio" id="defense" value="defense" v-model="sorted.sortBy">
+    <label for="defense">Defense</label>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['sorted'],
-  methods: {
-    sortByID() {
-      this.sorted.sortBy = 'id'
-    },
-     sortByName() {
-      this.sorted.sortBy = 'name'
-    }
-  }
+  props: ['sorted']
 }
 </script>
 
