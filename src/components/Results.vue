@@ -62,12 +62,12 @@ export default {
 
 .results {
   display: flex;
-  
   flex-wrap: wrap;
   transition: all 1s ease;
   overflow: scroll;
   align-content: flex-start; 
   max-width: 95%;
+  margin-top: 2px;
 }
 
 </style>

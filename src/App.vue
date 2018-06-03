@@ -71,7 +71,6 @@ export default {
 <style>
 #app {
   background: #fa0505;
-  height: 803px;
   font-family: 'Sunflower', sans-serif;
 }
 
