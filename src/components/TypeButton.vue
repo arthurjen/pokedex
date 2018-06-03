@@ -18,11 +18,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.type-button:hover {
 
-
-
-}
 input {
   display: none;
 }
@@ -42,9 +38,7 @@ label {
   width: 78px;
   height: 30px;
   padding: 6px 4px 4px 4px;
-  xbackground-color: #0033FF;
   background-color: #007BA7;
-
   color: white;
   text-align: center;
   font-size: 16px;
