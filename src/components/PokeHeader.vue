@@ -31,7 +31,6 @@ export default {
 .header {
   display: grid;
   grid-template: auto / 1fr 1fr;
-  
-
+  height: 260px;
 }
 </style>
