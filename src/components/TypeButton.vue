@@ -35,7 +35,7 @@ label:hover {
 label {
   display: inline-block;
   cursor: pointer;
-  width: 78px;
+  width: 85px;
   height: 30px;
   padding: 6px 4px 4px 4px;
   background-color: #007BA7;
@@ -43,7 +43,7 @@ label {
   text-align: center;
   font-size: 16px;
   border-radius: 2px;
-  border: 1px solid black;
+  border: 2px solid black;
   margin: 1px;
   transition: all 0.5s;
   text-shadow: 0 0.07em 0.07em rgba(0,0,0,0.40);

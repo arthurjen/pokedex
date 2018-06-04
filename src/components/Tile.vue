@@ -19,9 +19,6 @@ export default {
   props: ['pokemon']
 }
 
-
-
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
