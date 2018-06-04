@@ -49,7 +49,7 @@ export default {
 
 #hp-input {
   position: absolute;
-    right: 140px;
+    right: 220px;
     top: 126px;
   font-size: 20px;
   padding: 5px 10px 5px 5px;
