@@ -1,7 +1,7 @@
 <template>
   <div class="filter">
     
-    <div>
+    <div id="input-div">
       <input id="hp-input" type="number" placeholder="Minimum HP" v-model.number="filtered.hp"> 
     </div>
     <TypeButton 
@@ -40,17 +40,19 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 30px;
-  width: 550px;
-  
+  padding-top: 63px;
+  padding-left: 30px;
+  width: 561px; 
+  height: 100px;
 }
 
 #hp-input {
-  margin-left: 650px;
-  padding: 10px;
-  font-size: 22px;
+  position: absolute;
+    right: 140px;
+    top: 126px;
+  font-size: 20px;
   padding: 5px 10px 5px 5px;
-  width: 136px;
+  width: 140px;
 }
 
 </style>

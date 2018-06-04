@@ -17,8 +17,7 @@
     </div>
   </section>
   <section id="default-message" class="viewer" v-else>
-    <h1 id="select-pokemon">Select a Pokemon</h1>
-    
+    <h1 id="select-pokemon">Select a Pokemon</h1> 
   </section>
 </template>
 
@@ -41,6 +40,7 @@ export default {
     "info stats";
   margin: 30px;
   padding: 30px;
+  width: 500px;
   background: greenyellow;
   border-radius: 25px;
   border: 1px solid black;
@@ -55,6 +55,7 @@ img {
   align-content: center;
   margin: 0 auto;
 }
+
 .pokemon-name {
   grid-area: name;
   text-align: center;
@@ -68,6 +69,5 @@ img {
   padding-top: 100px;
 
 }
-
 
 </style>

@@ -39,7 +39,6 @@ export default {
 
 }
 
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -47,27 +46,30 @@ export default {
 .content {
   display: grid;
   grid-template: auto / 1fr 1fr;
-  
 }
 
 .results-container {
   display: flex;
   justify-content: center;
+  transition: all 1s ease;
   border: 1px solid black;
   border-radius: 25px;
   background: white;
+  width: 500px;
   height: 600px;
   margin: 30px;
+  padding: 30px;
 }
 
 .results {
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start; 
   transition: all 1s ease;
   overflow: scroll;
-  align-content: flex-start; 
-  max-width: 95%;
+  width: 460px;
   margin-top: 2px;
+  cursor: pointer;
 }
 
 </style>
