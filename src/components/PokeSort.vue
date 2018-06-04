@@ -41,6 +41,7 @@ export default {
 #sort-by {
   font-size: 2em;
   text-align: left;
+  margin-top: 30px;
   margin-left: 90px;
 }
 

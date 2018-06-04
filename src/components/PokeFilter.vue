@@ -42,6 +42,7 @@ export default {
   justify-content: flex-start;
   padding-top: 63px;
   padding-left: 30px;
+  margin-top: 30px;
   width: 561px; 
   height: 100px;
 }
