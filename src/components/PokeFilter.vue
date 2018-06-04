@@ -1,8 +1,8 @@
 <template>
   <div class="filter">
     
-    <div>
-      <input type="number" placeholder="Minimum HP" v-model.number="filtered.hp"> 
+    <div id="input-div">
+      <input id="hp-input" type="number" placeholder="Minimum HP" v-model.number="filtered.hp"> 
     </div>
     <TypeButton 
       v-for="n in types"
@@ -39,9 +39,21 @@ export default {
 .filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  padding: 30px;
-  
+  justify-content: flex-start;
+  padding-top: 63px;
+  padding-left: 30px;
+  margin-top: 30px;
+  width: 561px; 
+  height: 100px;
+}
+
+#hp-input {
+  position: absolute;
+    right: 170px;
+    top: 126px;
+  font-size: 20px;
+  padding: 5px 10px 5px 5px;
+  width: 140px;
 }
 
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ sort.sortBy }}
     <PokeHeader :filtered="filter" :types="types" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
   </div>
@@ -65,7 +64,6 @@ export default {
 <style>
 #app {
   background: #fa0505;
-  height: 803px;
   font-family: 'Sunflower', sans-serif;
 }
 
