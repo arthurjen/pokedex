@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ sort.sortBy }}
     <PokeHeader :filtered="filter" :types="types" :sorted="sort"/>
     <Results :pokeList="sortedFilteredPokemon"/>
   </div>

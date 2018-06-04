@@ -37,7 +37,7 @@ export default {
   grid-template-areas: 
     "picture picture"
     "name name"
-    "info stats";
+    "info stats"; 
   margin: 30px;
   padding: 30px;
   width: 500px;
